@@ -27,4 +27,5 @@ function switchHeader(pageName) {
 
 $(document).ready(function() {
 	loadHeader("Home");
+	loadPage('#content', 'Home', 'pages/home.html');
 });

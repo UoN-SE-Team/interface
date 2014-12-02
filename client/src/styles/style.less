@@ -8,19 +8,79 @@
 @fotheby-red: #F10400;
 @text-light: #FFF;
 @text-dark: #424242;
+@border: rgba(0,0,0,0.35);
 
 /* ---- */
 
 
-.html {
+html {
+	width: 100%;
+	height: 100%;
 	background-color: @bg;
+	color: @text-dark;
 }
 
-.body {
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
 	background-color: @bg-grey;
 }
 
-#navbar {
-	background-color: @fotheby-purple;
-	color: @text-light;
+#header {
+	width: 100%;
+	padding-top: 1em;
+	margin: 0 auto;
+	text-align: center;
+	background-color: @bg;
+	
+	#banner {
+
+	}
+
+	#language-select {
+		float: right;
+		margin-top: -0.85em;
+	}
+
+	#logo {
+		
+		img {
+			width: 305px;
+			height: 78px;	
+			padding-left: 76px;		
+		}
+
+		#slogon {
+
+		}
+	}
+	
+	#headerbar {
+		#navbar;
+		background-color: @fotheby-purple;
+		color: @text-light;
+	}	
+	
+	#navbar {
+		padding: 0.35em 1em 0.35em 1em;
+		text-align: left;		
+	}
+}
+
+#content-container {
+	width: 98%;
+	height: 75%;
+	padding: 1%;
+	
+	#content {
+		height: 100%;
+		padding: 5px;
+		border: 1px solid @border;
+	}
 }
