@@ -2,21 +2,53 @@
 
 /* Colours */
 
-@bg: #FFF;
-@bg-grey: #E2E2E2;
+@bg-colour: #FFF;
+@bg-colour-grey: #ECECEC;
 @fotheby-purple: #740D60;
 @fotheby-red: #F10400;
 @text-light: #FFF;
 @text-dark: #424242;
-@border: rgba(0,0,0,0.35);
+@border-colour: rgba(0,0,0,0.15);
+@footer-colour: #A2A2A2;
+@card-colour: #FFF;
+@shadow-colour: rgba(0,0,0,0.25);
 
 /* ---- */
 
+/* Variables */
+
+@card-width: 150px;
+@card-height: 150px;
+@card-img-width: 100px;
+@card-img-height: 100px;
+@font-header: 'Niconne', cursive;
+@font-standard: 'Open Sans', sans-serif;
+
+/* ---- */
+
+/* Fonts */
+
+.font-header() {
+	font-family: @font-header;
+	font-size: 28px;
+}
+.font-standard() {
+	font-family: @font-standard;
+	font-size: 18px;
+}
+.font-standard-light() {
+	.font-standard();
+	font-weight: 300;
+}
+
+
+/* ---- */
 
 html {
 	width: 100%;
 	height: 100%;
-	background-color: @bg;
+	background-color: @bg-colour;
+	.font-standard();
 	color: @text-dark;
 }
 
@@ -26,18 +58,23 @@ body {
 	margin: 0;
 }
 
+.center() {
+	margin: 0 auto;
+	text-align: center;
+}
+
 #container {
 	width: 100%;
 	height: 100%;
-	background-color: @bg-grey;
+	background-color: @bg-colour;
 }
 
 #header {
+	.center();
 	width: 100%;
+	height: 165px;
 	padding-top: 1em;
-	margin: 0 auto;
-	text-align: center;
-	background-color: @bg;
+	background-color: @bg-colour;
 	
 	#banner {
 
@@ -45,7 +82,8 @@ body {
 
 	#language-select {
 		float: right;
-		margin-top: -0.85em;
+		margin: -0.85em 0.3em 0 0;
+		font-size: 16px;
 	}
 
 	#logo {
@@ -63,24 +101,135 @@ body {
 	
 	#headerbar {
 		#navbar;
+		height: 25px;
+		position: relative;
 		background-color: @fotheby-purple;
-		color: @text-light;
+		color: @text-light;		
+		
+		#page-title {
+			position: absolute;
+			left: 0;
+			margin-left: 1em;
+		}
+		
+		#buttons {
+			position: absolute;
+			right: 0;
+			font-size: 16px;
+			
+			a {
+				margin: 0 1em 0 1em;
+			}
+		}
 	}	
 	
 	#navbar {
-		padding: 0.35em 1em 0.35em 1em;
-		text-align: left;		
+		padding: 0.35em 6em 0.35em 6em;
+		text-align: left;
+		.font-standard();
+		font-size: 18px;
+		
+		.nav-button {
+			width: 95px;
+			text-align: center;	
+			background-color: @fotheby-purple;
+			
+			a {
+				text-decoration: none;
+				color: @bg-colour;
+			}
+		}
 	}
 }
 
 #content-container {
 	width: 98%;
-	height: 75%;
-	padding: 1%;
+	height: 74%;
+	min-height: 69%;
+	margin: 1%;
+	border: 1px solid @border-colour;
+	overflow-y: auto;
+	background-color: @bg-colour-grey;
 	
 	#content {
-		height: 100%;
-		padding: 5px;
-		border: 1px solid @border;
+		margin: 20px;
+		text-align: center;
 	}
 }
+
+.card {
+	width: @card-width;
+	height: @card-height;
+	position: relative;
+	//float: left;
+	//display: inline-block;
+	margin: 20px;
+	padding: 1em;	
+	border-radius: 4px;
+	background-color: @card-colour;
+	box-shadow: 0 0px 6px @shadow-colour;
+}
+
+.card-button {
+	.card;
+	text-align: center;
+
+	.img-frame {		
+		width: @card-img-width;
+		height: @card-img-height;
+		position: relative;
+		margin: auto;
+		overflow: hidden;		
+		border-radius: 50%;
+		border: 1px solid @border-colour;	
+		
+		img {	
+			// Solution from: http://stackoverflow.com/a/19414020
+			position: absolute;			
+			top: -100%;
+			bottom: -100%;
+			left: -100%;
+			right: -100%;
+			margin: auto;
+		}
+	}
+	
+	.card-title {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;		
+		margin: 1em;
+		margin-bottom: 0.5em;
+		text-align: center;
+		.font-header();
+	}
+	
+	&:hover {
+		transform: scale(1.05, 1.05);
+		box-shadow: 0 0px 10px @shadow-colour;
+	}	
+}
+.card-button-large {
+	.card-button;
+	width: @card-width * 2;
+	height: @card-height * 2;
+	
+	.img-frame {
+		width: @card-img-width * 2;
+		height: @card-img-height * 2;
+		line-height: (@card-img-height * 2) - 2;	
+	}
+}
+
+footer {
+	.center();
+	color: @footer-colour;
+}
+
+/*@media screen and (max-width: 750px) {
+	.card, .card-button, .card-button-large {
+		float: none;
+		display: inline-block;
+	}
+}*/
