@@ -4,11 +4,11 @@ This is an example of using the available UI Components. View 'example.html' for
 <!-- 
 card-button
     A card button that contains an icon and a label. 1 unit x 1 unit.
-	Use for anything that doesn't display information like catalogue items
+	Use for anything that doesn't display information, for example catalogue items
 	
 	The icon will be centered but not scaled.
 -->
-<div class="card-button">	
+<div class="card-button" onclick="showOverlay();">
 	<div class="img-frame">
 		<img src="pages/assets/example_icon.png"/>
 	</div>
@@ -117,6 +117,7 @@ card-content
 								<div class="item-header">
 									<!-- This should link to the same destination as the content-link in item-footer  -->
 									<a class="item-title">Item Title</a>
+									<!-- This should not link to anything -->
 									<a class="item-extra">date/misc</a>
 								</div>
 								<div class="item-body">

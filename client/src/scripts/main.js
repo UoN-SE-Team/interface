@@ -30,6 +30,20 @@ function switchHeader(pageName) {
 	});
 }
 
+function showOverlay() {
+	$("#overlay-container").width("100%");
+	$("#overlay-container").height("100%");
+	$("#overlay-container").load("overlay.html", function() {
+		
+	});
+}
+
+function hideOverlay() {
+	$("#overlay-container").width("0");
+	$("#overlay-container").height("0");
+	$("#overlay-container").empty();
+}
+
 function initMasonry() {
 	$('#content').masonry({
 		columnWidth: 20
