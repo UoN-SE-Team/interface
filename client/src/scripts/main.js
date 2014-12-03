@@ -7,6 +7,7 @@ function loadPage(id, title, file, callback) {
 			if (callback != undefined) {
 				callback();
 			}
+			reloadMasonry();
 		});
 		document.title = title + " - " + document.title.split(" - ")[1];
 		switchHeader(title);
@@ -30,13 +31,29 @@ function switchHeader(pageName) {
 }
 
 function initMasonry() {
-	var $container = $('#content');
-	$container.masonry({
+	$('#content').masonry({
 		columnWidth: 20
 	});
 }
 
+function reloadMasonry() {
+	$('#content').masonry('reloadItems');
+	$('#content').masonry();
+}
+
+function wrapContent() {
+	// Fit the whole content container on the screen
+	$("#content-container").height($("#container").height() - 250);
+}
+
+// Event Handlers
 $(document).ready(function() {
 	loadHeader("Home");
 	loadPage('#content', 'Home', 'pages/home.html', initMasonry);
+	wrapContent();
 });
+
+$(window).resize(function() {
+	wrapContent();
+});
+

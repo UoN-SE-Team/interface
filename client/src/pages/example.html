@@ -1,5 +1,13 @@
-This is an example, and whoever's doing the homepage needs to edit this (home.html) to be the actual homepage. Checkout examples.html for UI components.
+This is an example of using the available UI Components. View 'example.html' for usage.
 <br/>
+
+<!-- 
+card-button
+    A card button that contains an icon and a label. 1 unit x 1 unit.
+	Use for anything that doesn't display information like catalogue items
+	
+	The icon will be centered but not scaled.
+-->
 <div class="card-button">	
 	<div class="img-frame">
 		<img src="pages/assets/example_icon.png"/>
@@ -9,72 +17,15 @@ This is an example, and whoever's doing the homepage needs to edit this (home.ht
 	</div>
 </div>
 
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button
-	</div>
-</div>
 
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button
-	</div>
-</div>
-
+<!-- 
+card-button-large
+    A large (2 units x 2 units) version of card-button.
+	Use in the same way as card-button but for important links like high value items in the catalogue
+-->
 <div class="card-button-large">
 	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button-large
-	</div>
-</div>
-
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button
-	</div>
-</div>
-
-<div class="card-button-large">
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button-large
-	</div>
-</div>
-
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button
-	</div>
-</div>
-
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button
-	</div>
-</div>
-
-<div class="card-button-large">
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
+		<img src="pages/assets/example_icon_large.png"/>
 	</div>
 	<div class="card-title">
 		card-button-large
@@ -82,49 +33,403 @@ This is an example, and whoever's doing the homepage needs to edit this (home.ht
 </div>
 
 
-<div class="card-button">	
+<!-- 
+card-button wide
+    On any card-button components, you can include the 'wide' class to make the card-button have the width of a large card-button but the height of a standard card-button.
+-->
+<div class="card-button wide">	
 	<div class="img-frame">
 		<img src="pages/assets/example_icon.png"/>
 	</div>
 	<div class="card-title">
-		card-button
+		card-button wide
 	</div>
 </div>
 
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button
-	</div>
+
+<!-- 
+card-button with info
+    Same as card-button but shows information instead.
+	Use in the same way as card-button but for displaying information about a link like linking to upcoming auctions.
+	
+	Variants:
+		The .wide class works in the same way as card-buttons
+-->
+<div class="card-button">
+	<div class="card-content-item">
+		<div class="item-header">
+			<a class="item-title">card-button</a>
+			<a class="item-extra">date</a>
+		</div>
+		<div class="item-body">
+			Some content
+		</div>
+		<div class="item-footer">
+			some misc info
+		</div>
+	</div>	
 </div>
 
+<!-- 
+card-button-large with info
+    Same as above.
+	You can also display an image before the content as shown below. Images should not be used on standard size card-buttons with info as it clutters the card.
+-->
 <div class="card-button-large">
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
+	<div class="card-content-item">
+		<div class="item-header">
+			<a class="item-title">card-button-large</a>
+			<a class="item-extra">date</a>
+		</div>
+		<div class="item-body">
+			<div class="img-frame-standard">
+				<img src="pages/assets/example_icon.png"/>
+			</div>
+			Some content
+		</div>
+		<div class="item-footer">
+			some misc info
+		</div>
+	</div>	
+</div>
+
+<!-- 
+card-content
+    A card for displaying information in a list view. Auto height and width.
+	Use for displaying information snippets like bid history
+-->
+<div class="card-content">
 	<div class="card-title">
-		card-button-large
+		card-content
+	</div>
+	<div class="card-content-container">
+		<div class="card-content-wrapper">		
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->			
+		</div>
 	</div>
 </div>
 
-<div class="card-button">	
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
+
+<!-- 
+card-content
+    Content cards can have an unlimited amount of items with auto truncation and scollbars as shown below
+-->
+<div class="card-content">
 	<div class="card-title">
-		card-button
+		Content Cards can have unlimted items
+	</div>
+	<div class="card-content-container">
+		<div class="card-content-wrapper">		
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 2</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->	
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 3</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 4</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 5</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 6</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 7</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 8</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 9</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- this is a single item in the card -->
+			<div class="card-content-item">
+				<table>
+					<tbody>
+						<tr>
+							<td class="item-img">
+								<!-- icon/image to show. Will be resized to 64 x 64 -->
+								<img src="pages/assets/example_icon_small.png"/>
+							</td>
+							<td class="item-content">
+								<div class="item-header">
+									<!-- This should link to the same destination as the content-link in item-footer  -->
+									<a class="item-title">Item Title 10</a>
+									<a class="item-extra">date/misc</a>
+								</div>
+								<div class="item-body">
+									Some content
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<!-- This should link to the same destination as the item-title  -->
+					<a class="content-link">view</a>
+				</div>
+			</div>
+			<!-- end item -->
+		</div>
 	</div>
 </div>
 
-<div class="card-button-large">
-	<div class="img-frame">
-		<img src="pages/assets/example_icon.png"/>
-	</div>
-	<div class="card-title">
-		card-button-large
-	</div>
-</div>
 
 

@@ -19,10 +19,16 @@
 
 @card-width: 150px;
 @card-height: 150px;
+@card-width-wide: 250px;
 @card-img-width: 100px;
 @card-img-height: 100px;
+@min-card-content-width: 250px;
+@min-card-content-height: 250px;
+@max-card-content-width: 550px;
+@max-card-content-height: 550px;
 @font-header: 'Niconne', cursive;
 @font-standard: 'Open Sans', sans-serif;
+@text-inset: 0px 3px 3px #FFF;
 
 /* ---- */
 
@@ -49,6 +55,7 @@ html {
 	height: 100%;
 	background-color: @bg-colour;
 	.font-standard();
+	font-size: 14px;
 	color: @text-dark;
 }
 
@@ -129,24 +136,26 @@ body {
 		.font-standard();
 		font-size: 18px;
 		
+		a {
+			display: inline-block;
+			text-decoration: none;
+			color: @bg-colour;
+		}
+		
 		.nav-button {
-			width: 95px;
+			width: 125px;
+			padding: 2px 0 2px 0;
 			text-align: center;	
-			background-color: @fotheby-purple;
-			
-			a {
-				text-decoration: none;
-				color: @bg-colour;
-			}
+			background-color: @fotheby-purple;		
 		}
 	}
 }
 
 #content-container {
 	width: 98%;
-	height: 74%;
-	min-height: 69%;
-	margin: 1%;
+	height: 75vh; // Dynamically calculated
+	//min-height: 69%;
+	margin: 22px 1% 0 1%;
 	border: 1px solid @border-colour;
 	overflow-y: auto;
 	background-color: @bg-colour-grey;
@@ -161,8 +170,8 @@ body {
 	width: @card-width;
 	height: @card-height;
 	position: relative;
-	//float: left;
-	//display: inline-block;
+	/*float: left;
+	/display: inline-block;*/
 	margin: 20px;
 	padding: 1em;	
 	border-radius: 4px;
@@ -205,8 +214,41 @@ body {
 		.font-header();
 	}
 	
+	/* Content Button*/
+	
+	.card-content-item {
+		
+		.item-header {
+			.card-content .card-title;
+			
+			.item-title {
+				
+			}
+			
+			.item-extra {
+				margin-left: 5px;
+				font-size: 0.5em;
+				font-family: @font-standard;
+			}
+		}
+		
+		.item-body {
+			margin-top: 5px;
+			text-align: left;
+		}
+		
+		.item-footer {
+			position: absolute;
+			bottom: 2px;
+			right: 5px;
+			font-size: 0.9em;
+		}
+	}
+	
+	/* ---- */
+	
 	&:hover {
-		transform: scale(1.05, 1.05);
+		transform: scale(1.025, 1.025);
 		box-shadow: 0 0px 10px @shadow-colour;
 	}	
 }
@@ -218,13 +260,110 @@ body {
 	.img-frame {
 		width: @card-img-width * 2;
 		height: @card-img-height * 2;
-		line-height: (@card-img-height * 2) - 2;	
+		line-height: (@card-img-height * 2) - 2
+	}
+	
+	.img-frame-standard {
+		.card-button .img-frame;
+	}
+}
+
+// Used for card buttons
+.wide {
+	width: @card-width-wide;
+}
+.card-content {
+	.card;
+	//min-width: @min-card-content-width;
+	width: @max-card-content-width;
+	min-height: @min-card-content-height;
+	height: auto;
+	max-height: @max-card-content-height;
+	padding-top: 5px;
+	padding-right: 15px;
+	text-align: left;
+
+	.card-title {
+		font-size: 28px;
+		font-family: @font-header;
+		text-shadow: @text-inset;
+		border-bottom: 1px solid @border-colour;
+	}
+	
+	.card-content-container {
+		width: 100%;
+		height: 90%;		
+		overflow: hidden;		
+		
+		.card-content-wrapper {
+			max-height: 480px;
+			overflow-y: auto;
+			border-bottom: 1px solid @border-colour;
+			
+			.card-content-item {
+				word-wrap: break-word;
+				border: 1px solid @border-colour;
+				border-bottom: none;
+			
+				td {
+					vertical-align: top;
+				}
+				
+				.item-img {
+			
+					img {
+						width: 64px;
+						height: 64px;							
+					}
+				}
+				
+				.item-content {				
+				
+					.item-header {
+					
+						.item-title {
+							font-size: 18px;
+							color: @fotheby-purple;						
+							text-decoration: none;
+							cursor: pointer;
+						}
+					
+						.item-extra {			
+							margin-left: 5px;				
+							font-size: 0.85em;
+							text-decoration: none;
+						}
+					}
+				
+					.item-body {
+						width: 100%;
+					}
+				}
+					
+			
+				.item-footer {
+					width: 100%;
+					text-align: right;
+				
+					.content-link {
+						padding-right: 5px;
+						font-size: 0.75em;
+						color: @fotheby-purple;	
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}		
+			}
+		}
 	}
 }
 
 footer {
 	.center();
+	height: 42px;
+	line-height: 42px;
 	color: @footer-colour;
+	font-size: 14px;
 }
 
 /*@media screen and (max-width: 750px) {
