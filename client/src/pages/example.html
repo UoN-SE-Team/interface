@@ -8,7 +8,7 @@ card-button
 	
 	The icon will be centered but not scaled.
 -->
-<div class="card-button" onclick="showOverlay();">
+<div class="card-button">
 	<div class="img-frame">
 		<img src="pages/assets/example_icon.png"/>
 	</div>
@@ -22,13 +22,24 @@ card-button
 card-button-large
     A large (2 units x 2 units) version of card-button.
 	Use in the same way as card-button but for important links like high value items in the catalogue
+	
+	The onclick attribute is used to add an action to the button. In this example, we open the generic overlay with some arguments to customise the content. See the docs on Google Drive for information on the parameters.
 -->
-<div class="card-button-large">
+<div class="card-button-large" onclick="showOverlay('Example Title', 
+	                                                ['an action', 'http://google.com', 'an action 2', 'http://google.com'], 
+	                                                ['pages/assets/example_gallery/image1.png', 
+	                                                 'pages/assets/example_gallery/image2.png', 
+	                                                 'pages/assets/example_gallery/image3.png'], 
+	                                                'test content head', 
+	                                                'test content <a>with link</a>', 
+	                                                'test alt content head', 
+	                                                'test alt content <a>with link</a>'
+	                                               );">
 	<div class="img-frame">
 		<img src="pages/assets/example_icon_large.png"/>
 	</div>
 	<div class="card-title">
-		card-button-large
+		card-button-large - Click for overlay
 	</div>
 </div>
 

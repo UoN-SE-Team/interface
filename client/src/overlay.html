@@ -1,43 +1,47 @@
 
 <div id="overlay-bg">
 	<div id="overlay">
-		<a class="btn-close" href="javascript:void(0);" onclick="hideOverlay();return false">
+		<a id="btn-close" href="javascript:void(0);" onclick="hideOverlay();return false">
 			<img src="pages/assets/close.png"/>
 		</a>
-		<div class="overlay-header">
-			<div class="overlay-title">
+		<div id="overlay-header">
+			<div id="overlay-title">
 				Overlay Title
 			</div>
-			<div class="overlay-actions">
-				<a class="overlay-action">
+			<div id="overlay-actions">
+				<!--<a class="overlay-action">
 					action
-				</a>
-				<a class="overlay-action">
-					action
-				</a>
+				</a>-->
 			</div>
 		</div>
-		<div class="overlay-gallery">
-			Gallery
+		<div id="overlay-gallery">
+			<!-- Gallery -->
+			<div id="gallery-btn-left">
+				<img src="pages/assets/arrow-left.png" /> 
+			</div>
+			<div id="gallery-btn-right">
+				<img src="pages/assets/arrow-right.png" /> 
+			</div>
+			<div id="gallery-images-container"></div>
 		</div>
-		<div class="overlay-content">
+		<div id="overlay-content">
 			<table id="overlay-content-table">
 				<tbody>
 					<tr>
-						<td class="panel-1">
+						<td id="panel-1">
 							<div class="content-title">
-								Description
+								Content Header
 							</div>
 							<div class="content">
-								A description
+								Content
 							</div>
 						</td>
-						<td class="panel-2">
+						<td id="panel-2">
 							<div class="content-title">
-								Auction Information
+								Content Alt Header
 							</div>
 							<div class="content">
-								Some information
+								Content
 							</div>
 						</td>
 					</tr>

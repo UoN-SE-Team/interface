@@ -87,6 +87,11 @@ body {
 	cursor: pointer;
 }
 
+a {
+	.link();
+	font-size: 14px;
+}
+
 #container {
 	width: 100%;
 	height: 100%;
@@ -191,7 +196,7 @@ body {
 			padding-top: 0;
 			background-color: @card-colour;
 			
-			.btn-close {
+			#btn-close {
 				float: right;
 				margin: 6px -12px 0 0;
 				cursor: pointer;
@@ -202,18 +207,18 @@ body {
 				}
 			}
 			
-			.overlay-header {
+			#overlay-header {
 				margin: 0 -8px 0 -8px;
 				padding: 8px 0 0 12px;
 				font-family: @font-header;
 				font-size: 32px;
 				border-bottom: 1px solid @border-colour;
 				
-				.overlay-title {
+				#overlay-title {
 					display: inline-block;
 				}	
 				
-				.overlay-actions {
+				#overlay-actions {
 					display: inline-block;
 					position: absolute;
 					right: 60px;
@@ -225,32 +230,73 @@ body {
 				}
 			}
 			
-			.overlay-gallery {
+			#overlay-gallery {
 				height: 250px;
 				margin-top: 15px;
 				border: 1px solid @border-colour;
+				
+				#gallery-btn-left {					
+					width: 30px;
+					height: 100%;
+					position: relative;
+					float: left;			
+					
+				}
+				
+				#gallery-btn-right {
+					#gallery-btn-left;
+					float: right;
+					text-align: right;
+				}
+				
+				#gallery-btn-left img, #gallery-btn-right img {
+					.hv-center();
+					cursor: pointer;
+				}
+				
+				#gallery-images-container {
+					height: 100%;
+					margin: 0 auto;
+					text-align: center;
+					
+					img {						
+						width: 200px;
+						height: 150px;
+						margin-top: 50px;
+						margin-left: 15px;		
+						border: 1px solid @border-colour;				
+					}
+				}
 			}
 			
-			.overlay-content {
+			#overlay-content {
 				margin-top: 15px;
 				
-				.panel-1 {
-					width: 72%;	
-					border-right: 1px solid @border-colour;
-				}
+				#overlay-content-table {
 				
-				.panel-1, .panel-2 {
-					padding-left: 15px;
-				}
+					td {
+						padding-bottom: 20px;
+					}
+					
+					#panel-1 {
+						width: 72%;						
+						border-right: 1px solid @border-colour;
+					}
 				
-				.content-title {
-					.font-standard();
-					font-size: 20px;
-				}
+					#panel-1, #panel-2 {
+						padding-left: 15px;
+					}
 				
-				.content {
-					margin: 5px 0 0 30px;
-				}
+					.content-title {
+						.font-standard();
+						font-size: 20px;
+					}
+				
+					.content {
+						margin: 5px 0 0 30px;
+					}
+					
+					}		
 			}
 		}
 	}
@@ -469,8 +515,25 @@ footer {
 	font-size: 14px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 950px) {
 	#overlay {
 		max-width: 85%;
+		
+		#overlay-gallery {	
+			max-height: 200px;
+		
+			#gallery-images-container img {
+				margin-top: 35px !important;
+				margin-left: 10px;
+				max-width: 175px;
+				max-height: 125px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 750px) {
+	#gallery-images-container img {
+		margin-left: 2px !important;
 	}
 }
