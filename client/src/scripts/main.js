@@ -29,10 +29,17 @@ function loadHeader(pageName) {
 // Changes the active navbar button
 function switchHeader(pageName) {
 	$(".nav-button").each(function() {
-		if ($(this).text() == pageName) {
-			$(this).attr("class", "nav-button-on");
+		if ($(this).text().trim() == pageName) {
+			$(this).addClass("on");
+		} else {
+			$(this).removeClass("on");
 		}
 	});
+	if (pageName == "Home") {
+		$("#page-title").text("Welcome to Fotheby's");
+	} else {
+		$("#page-title").text(pageName);
+	}
 }
 
 function showOverlay(title, actions /* [title, url ...] */, images /* [path ...] */, contentHeader, content, contentAltHeader, contentAlt) {
