@@ -168,7 +168,8 @@ a {
 			width: 125px;
 			padding: 2px 0 2px 0;
 			text-align: center;	
-			background-color: @fotheby-purple;		
+			background-color: @fotheby-purple;
+		    border-radius: 2px;
 		}
 		.nav-button.on {
 			font-weight: bold;
@@ -299,7 +300,7 @@ a {
 						margin: 5px 0 0 30px;
 					}
 					
-					}		
+				}
 			}
 		}
 	}
@@ -317,6 +318,12 @@ a {
 	#content {
 		margin: 20px;
 		text-align: center;
+	}
+
+  	#important-items {
+	  	width: 100%;
+	  	margin: 0 auto;
+	  	text-align: center;
 	}
 }
 
@@ -518,6 +525,23 @@ a {
 					}
 				}		
 			}
+		}
+	}
+}
+
+#arrow-container {
+    display: none;
+  	line-height: 30px;
+
+  	.arrow {
+		vertical-align: middle;
+	   	cursor: pointer;
+	}
+
+  	#page-numbers {
+	  	a {
+		  	margin-left: 4px;
+		  	margin-right: 4px;
 		}
 	}
 }

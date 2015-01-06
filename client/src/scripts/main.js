@@ -4,6 +4,10 @@
 	framework (like Spring).
 */
 
+var loadCatalogue = true;
+var pages = [[]];
+var currentCatPage = 1;
+
 
 // Loads page content, sets the title and changes the active navbar button
 function loadPage(id, title, file, callback) {
@@ -13,10 +17,18 @@ function loadPage(id, title, file, callback) {
 			if (callback != undefined) {
 				callback();
 			}
-			reloadMasonry();
+			reloadMasonry(title);
 		});
 		document.title = title + " - " + document.title.split(" - ")[1];
 		switchHeader(title);
+
+		if (title == "Catalogue") {
+			$(".copyright").css("display", "none");
+			$("#arrow-container").css("display", "block");
+		} else {
+			$(".copyright").css("display", "block");
+			$("#arrow-container").css("display", "none");
+		}
 	}
 }
 
@@ -81,13 +93,13 @@ function showOverlay(title, actions /* [title, url ...] */, images /* [path ...]
 		}
 		// content header
 		var content = overlay.find("#overlay-content");
-		content.find("#panel-1 .content-title").html(contentHeader);
+		content.find("#panel-1").find("content-title").html(contentHeader);
 		// content
-		content.find("#panel-1 .content").html(jQuery.parseHTML(content));
+		content.find("#panel-1").find("content").html(jQuery.parseHTML(content));
 		// content Alt header
-		content.find("#panel-2 .content-title").html(contentAltHeader);
+		content.find("#panel-2").find("content-title").html(contentAltHeader);
 		// content Alt
-		content.find("#panel-2 .content").html(jQuery.parseHTML(contentAlt));
+		content.find("#panel-2").find("content").html(jQuery.parseHTML(contentAlt));
 		
 	});
 }
@@ -100,15 +112,84 @@ function hideOverlay() {
 }
 
 function initMasonry() {
-	$('#content').masonry({
+	var content = $("#content");
+	content.masonry({
 		columnWidth: 20
 	});
+	content.masonry("on", "layoutComplete", arrangeCatalogue);
 }
 
-function reloadMasonry() {
+function reloadMasonry(title) {
 	var content = $("#content");
 	content.masonry('reloadItems');
 	content.masonry();
+}
+
+function arrangeCatalogue() {
+	var container = $("#content-container");
+	var content = $("#content");
+	content.masonry("off", "layoutComplete", arrangeCatalogue);
+	content.masonry({ transitionDuration: 0 });
+	container.css("overflow", "auto");
+	if (document.title.contains("Catalogue")) {
+		var page = 2;
+		var pageNumbers = $("#arrow-content").find("#page-numbers");
+		container.css("overflow", "hidden");
+		if (pageNumbers.children().length == 0 || loadCatalogue) {
+			if (pageNumbers.children().length == 0) pageNumbers.append('<a href="javascript:void(0);" onclick="loadCatPage(1);">1</a>');
+			var newPage = true;
+			while (newPage) {
+				newPage = false;
+				content.children().each(function () {
+					if ((parseFloat($(this).css("top")) + $(this).outerHeight(true)) > container.innerHeight()) {
+						newPage = true;
+						if (pages[page-1] == undefined) {
+							pages[page-1] = [];
+							pageNumbers.append('<a href="javascript:void(0);" onclick="loadCatPage(' + page + ');">' + page + '</a>');
+						}
+						pages[page-1].push($(this));
+						$(this).remove();
+						if (page-2 > 0) {
+							pages[page-2].splice(pages[page-2].indexOf($(this)), 1);
+						}
+					} else if (page-1 == 1) {
+						if (pages[0] == undefined) pages[0] = [];
+						pages[0].push($(this));
+					}
+				});
+				if (newPage) {
+					loadCatPage(page, true);
+					page++;
+				}
+			}
+			loadCatalogue = false;
+			loadCatPage(1, true);
+		}
+	}
+	initMasonry();
+}
+
+function loadCatPage(page, force) {
+	if (currentCatPage != page || force) {
+		currentCatPage = page;
+		var content = $("#content");
+		var arrowContent = $("#arrow-container").find("#arrow-content");
+		content.empty();
+		for (var i = 0; i < pages[page-1].length; i++) {
+			content.append(pages[page-1][i]);
+		}
+		arrowContent.find("#cat-left").css("visibility", "visible");
+		arrowContent.find("#cat-left").attr("onclick", "loadCatPage("+(page-1)+")");
+		arrowContent.find("#cat-right").css("visibility", "visible");
+		arrowContent.find("#cat-right").attr("onclick", "loadCatPage("+(page+1)+")");
+		if (page == 1) {
+			arrowContent.find("#cat-left").css("visibility", "hidden");
+		}
+		if (page == pages.length) {
+			arrowContent.find("#cat-right").css("visibility", "hidden");
+		}
+		reloadMasonry();
+	}
 }
 
 function wrapContent() {
