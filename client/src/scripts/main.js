@@ -13,12 +13,16 @@ var currentCatPage = 1;
 function loadPage(id, title, file, callback) {
 	// In the final implementation, we'll be using a full templating framework so SEO won't be a problem
 	if (title != document.title) {
-		$(id).load(file, function() {
-			if (callback != undefined) {
-				callback();
-			}
-			reloadMasonry(title);
-		});
+		if (title == "Catalogue" && !loadCatalogue) {
+			loadCatPage(1, true);
+		} else {
+			$(id).load(file, function() {
+				if (callback != undefined) {
+					callback();
+				}
+				reloadMasonry();
+			});
+		}
 		document.title = title + " - " + document.title.split(" - ")[1];
 		switchHeader(title);
 
@@ -111,15 +115,17 @@ function hideOverlay() {
 	container.empty();
 }
 
+
 function initMasonry() {
 	var content = $("#content");
 	content.masonry({
-		columnWidth: 20
+		columnWidth: 20,
+		transitionDuration: '0.5s'
 	});
 	content.masonry("on", "layoutComplete", arrangeCatalogue);
 }
 
-function reloadMasonry(title) {
+function reloadMasonry() {
 	var content = $("#content");
 	content.masonry('reloadItems');
 	content.masonry();
@@ -169,7 +175,7 @@ function arrangeCatalogue() {
 	initMasonry();
 }
 
-function loadCatPage(page, force) {
+function loadCatPage(page, force, pageChange) {
 	if (currentCatPage != page || force) {
 		currentCatPage = page;
 		var content = $("#content");
