@@ -59,12 +59,12 @@ function switchHeader(pageName) {
 	}
 }
 
-function showOverlay(title, actions /* [title, url ...] */, images /* [path ...] */, contentHeader, content, contentAltHeader, contentAlt) {
+function showOverlay(title, actions /* [title, url ...] */, images /* [path ...] */, contentHeader, mainContent, contentAltHeader, contentAlt) {
 	// title: 			 Overlay title
 	// actions: 		 Quick links on the right of the title (array: [title, url ...]
 	// images: 		 	 Gallery images (array: [path ...])
 	// contentHeader: 	 Title of left content section
-	// content: 		 HTML string of left content section
+	// mainContent: 		 HTML string of left content section
 	// contentAltHeader: Title of right content section
 	// contentAlt:		 HTML string of right content section
 	var overlayContainer = $("#overlay-container");
@@ -97,13 +97,13 @@ function showOverlay(title, actions /* [title, url ...] */, images /* [path ...]
 		}
 		// content header
 		var content = overlay.find("#overlay-content");
-		content.find("#panel-1").find("content-title").html(contentHeader);
+		content.find("#panel-1").find(".content-title").html(contentHeader);
 		// content
-		content.find("#panel-1").find("content").html(jQuery.parseHTML(content));
+		content.find("#panel-1").find(".content").html(jQuery.parseHTML(mainContent));
 		// content Alt header
-		content.find("#panel-2").find("content-title").html(contentAltHeader);
+		content.find("#panel-2").find(".content-title").html(contentAltHeader);
 		// content Alt
-		content.find("#panel-2").find("content").html(jQuery.parseHTML(contentAlt));
+		content.find("#panel-2").find(".content").html(jQuery.parseHTML(contentAlt));
 		
 	});
 }
