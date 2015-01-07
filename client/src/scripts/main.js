@@ -40,6 +40,17 @@ function loadPage(id, title, file, callback) {
 function loadHeader(pageName) {
 	$("#header").load("header.html", function() {
 		switchHeader(pageName);
+		var advancedSearch = $("#btn-advanced-search");
+		var search = $("#search-box");
+		search.focusin(function() {
+			advancedSearch.css("visibility", "visible");
+		});
+		search.focusout(function() {
+			window.setTimeout(function() { advancedSearch.css("visibility", "hidden"); }, 100);
+		});
+		advancedSearch.click(function() {
+			alert("advanced search");
+		});
 	});
 }
 
