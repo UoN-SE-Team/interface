@@ -21,6 +21,9 @@ function loadPage(id, title, file, callback) {
 					callback();
 				}
 				reloadMasonry();
+				if (title == "Search") {
+					formatCurrencyInput();
+				}
 			});
 		}
 		document.title = title + " - " + document.title.split(" - ")[1];
@@ -29,7 +32,8 @@ function loadPage(id, title, file, callback) {
 		if (title == "Catalogue") {
 			$(".copyright").css("display", "none");
 			$("#arrow-container").css("display", "block");
-		} else {
+		}
+		else {
 			$(".copyright").css("display", "block");
 			$("#arrow-container").css("display", "none");
 		}
@@ -126,22 +130,6 @@ function hideOverlay() {
 	container.empty();
 }
 
-
-function initMasonry() {
-	var content = $("#content");
-	content.masonry({
-		columnWidth: 20,
-		transitionDuration: '0.5s'
-	});
-	content.masonry("on", "layoutComplete", arrangeCatalogue);
-}
-
-function reloadMasonry() {
-	var content = $("#content");
-	content.masonry('reloadItems');
-	content.masonry();
-}
-
 function arrangeCatalogue() {
 	var container = $("#content-container");
 	var content = $("#content");
@@ -209,6 +197,37 @@ function loadCatPage(page, force, pageChange) {
 	}
 }
 
+function formatCurrencyInput() {
+	$(".currency").each(function() {
+		$(this).before("<span class='currency-symbol'>&#163;</span>");
+		$(this).change(function() {
+			var min = parseFloat($(this).attr("min"));
+			var max = parseFloat($(this).attr("max"));
+			var value = $(this).val();
+			if(value < min)
+				value = min;
+			else if(value > max)
+				value = max;
+			$(this).val(value.toFixed(2));
+		});
+	});
+}
+
+function initMasonry() {
+	var content = $("#content");
+	content.masonry({
+		columnWidth: 20,
+		transitionDuration: '0.5s'
+	});
+	content.masonry("on", "layoutComplete", arrangeCatalogue);
+}
+
+function reloadMasonry() {
+	var content = $("#content");
+	content.masonry('reloadItems');
+	content.masonry();
+}
+
 function wrapContent() {
 	// Fit the whole content container on the screen
 	$("#content-container").height($("#container").height() - 250);
@@ -219,16 +238,6 @@ $(document).ready(function() {
 	loadHeader("Home");
 	loadPage('#content', 'Home', 'pages/home.html', initMasonry);
 	wrapContent();
-	/*showOverlay('Example Title',
-				['an action', 'http://google.com', 'an action 2', 'http://google.com'],
-				['pages/assets/example_gallery/image1.png',
-				 'pages/assets/example_gallery/image2.png',
-				 'pages/assets/example_gallery/image3.png'],
-				'test content head',
-				'test content <a>with link</a>',
-				'test alt content head',
-				'test alt content <a>with link</a>'
-			   );*/
 });
 
 $(window).resize(function() {

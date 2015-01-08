@@ -1,9 +1,15 @@
-input{
-	padding:3px 25px 3px 3px;
+input {
+	padding:3px 25px 3px 15px;
 	border: solid 1px #dcdcdc;
 	transition: box-shadow 0.3s, border 0.3s;/*sets transition time between normal border and shadowed border(making a glowing effect*/
     box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
     border-radius:2px;
+}
+
+.currency-symbol {
+	position: absolute;
+	padding-top: 3px;
+	padding-left: 5px;
 }
 
 ::-webkit-input-placeholder {
@@ -27,6 +33,7 @@ input:focus{
 	box-shadow: 0 0 5px 1px #969696;
 }
 
-input[type=submit]:hover{
-	opacity:.75;
-    cursor:pointer;
+input[type=submit]:hover {
+	opacity: .75;
+	cursor: pointer;
+}
