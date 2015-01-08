@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="styles/search.css"/>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><!--this need to be added to the head-->
         <script>
         (function($) {
@@ -23,7 +24,7 @@
         $(document).ready(function() {
             $('input.currency').currencyInput();
         });
-        </script>
+</script>
 <div>
 	<h1>
 		Advanced Search Options
@@ -72,7 +73,7 @@
 					Price range:
 				</td>
 				<td>
-					From: <input type="number" class="currency" min="0.01" max="2500.00" placeholder="50.000" /> To: <input type="number" class="currency" min="0.01" max="2500.00" placeholder="50.000" />
+					From: <input type="number" class="currency" min="50000.00" max="220000000.00" placeholder="500000.00" /> To: <input type="number" class="currency" min="50000.00" max="220000000.00" placeholder="500000.00" />
 				</td>
 			</tr>
 			<tr>
@@ -83,6 +84,21 @@
 					<input type="checkbox" name="auction1"/>Auction no. 1<br/>
 					<input type="checkbox" name="auction2"/>Auction no.2<br/>
 					<input type="checkbox" name="auction2"/>Auction no.3<br/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Subject:
+				</td>
+				<td>
+					<input type="checkbox" name="portrait"/>Portrait<br/>
+					<input type="checkbox" name="lanscape"/>Lanscape<br/>
+					<input type="checkbox" name="seascape"/>Seascape<br/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" name="send" value="Search"/>
 				</td>
 			</tr>
 		</table>

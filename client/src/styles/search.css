@@ -1,0 +1,32 @@
+input{
+	padding:3px 25px 3px 3px;
+	border: solid 1px #dcdcdc;
+	transition: box-shadow 0.3s, border 0.3s;/*sets transition time between normal border and shadowed border(making a glowing effect*/
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+}
+
+::-webkit-input-placeholder {
+	color:#A9BCF5;
+
+}
+:-moz-placeholder {
+	color:#A9BCF5; 
+}
+
+::-moz-placeholder {
+	color:#A9BCF5; 
+}
+
+:-ms-input-placeholder {
+	color:#A9BCF5; 
+}
+
+input:focus{
+	border: solid 1px #707070;
+	box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type=submit]:hover{
+	opacity:.75;
+    cursor:pointer;
