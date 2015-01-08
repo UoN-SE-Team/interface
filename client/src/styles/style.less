@@ -13,6 +13,7 @@
 @card-colour: #FFF;
 @shadow-colour: rgba(0,0,0,0.25);
 @overlay-bg-colour: rgba(0,0,0,0.65);
+@link-hover-colour: @fotheby-red;
 
 /* ---- */
 
@@ -127,13 +128,18 @@ a {
 
 		}
 	}
+
 	
 	#headerbar {
-		#navbar;
-		height: 25px;
-		position: relative;
+	   	width: 100%;
+		height: 26px;
+	  	position: relative;
+	  	padding: 10px 0 10px 0;
+	  	.font-standard();
+	  	font-size: 18px;
 		background-color: @fotheby-purple;
-		color: @text-light;		
+		color: @text-light;
+	  	border-bottom: 2px solid @fotheby-red;
 		
 		#page-title {
 			position: absolute;
@@ -147,7 +153,13 @@ a {
 			font-size: 16px;
 			
 			a {
+			  	display: inline-block;
 				margin: 0 1em 0 1em;
+				text-decoration: none;
+				color: @bg-colour;
+			}
+			a:hover {
+			  	//color: @link-hover-colour;
 			}
 		}
 
@@ -177,19 +189,28 @@ a {
 	}	
 	
 	#navbar {
-		padding: 0.35em 6em 0.35em 6em;
+		//padding: 0.35em 6em 0.35em 6em;
+	  	position: absolute;
+	  	left: 250px;
+	  	margin-top: -5px;
 		text-align: left;
 		.font-standard();
-		font-size: 18px;
+		font-size: 22px;
 		
 		a {
+		  	width: 90px;
 			display: inline-block;
+		  	margin-right: 2px;
 			text-decoration: none;
 			color: @bg-colour;
 		}
-		
+		a:hover {
+		  	//color: @link-hover-colour;
+		  	font-weight: bold;
+		}
+
 		.nav-button {
-			width: 125px;
+			//width: 125px;
 			padding: 2px 0 2px 0;
 			text-align: center;	
 			background-color: @fotheby-purple;

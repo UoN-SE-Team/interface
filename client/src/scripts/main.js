@@ -53,7 +53,7 @@ function loadHeader(pageName) {
 			window.setTimeout(function() { advancedSearch.css("visibility", "hidden"); }, 100);
 		});
 		advancedSearch.click(function() {
-			alert("advanced search");
+			loadPage("#content", "Search", "pages/search.html");
 		});
 	});
 }
