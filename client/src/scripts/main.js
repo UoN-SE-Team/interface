@@ -50,7 +50,7 @@ function loadHeader(pageName) {
 			advancedSearch.css("visibility", "visible");
 		});
 		search.focusout(function() {
-			window.setTimeout(function() { advancedSearch.css("visibility", "hidden"); }, 100);
+			window.setTimeout(function() { advancedSearch.css("visibility", "hidden"); }, 300);
 		});
 		advancedSearch.click(function() {
 			loadPage("#content", "Search", "pages/search.html");
