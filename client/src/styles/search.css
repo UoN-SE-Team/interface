@@ -1,9 +1,32 @@
+div.search{
+	text-align: left;
+	color: #740D60
+}
+
+table.form{
+	border-spacing:13px;
+}
+
+hr {
+	display: block; 
+	height: 1px;
+    border: 0; 
+	border-top: 1px solid #a80000;
+    margin: 1em 0; 
+	padding: 0;
+	color:red;
+}
 input {
 	padding:3px 25px 3px 15px;
 	border: solid 1px #dcdcdc;
-	transition: box-shadow 0.3s, border 0.3s;/*sets transition time between normal border and shadowed border(making a glowing effect*/
-    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+	transition: box-shadow 0.3s, border 0.3s;
+	-moz-transition: box-shadow 0.3s, border 0.3s;
+    box-shadow: 0px 0px 3px #FFFFFF, 0 10px 15px #f2e6f1 inset;
+	-webkit-box-shadow: 0px 0px 3px #FFFFFF, 0 10px 15px #f2e6f1 inset;
+	-moz-box-shadow: 0px 0px 3px #FFFFFF, 0 10px 15px #f2e6f1 inset;
     border-radius:2px;
+	color: #740D60;
+	
 }
 
 .currency-symbol {
@@ -13,27 +36,30 @@ input {
 }
 
 ::-webkit-input-placeholder {
-	color:#A9BCF5;
+	color: #740D60;
 
 }
 :-moz-placeholder {
-	color:#A9BCF5; 
+	color:#740D60; 
 }
 
 ::-moz-placeholder {
-	color:#A9BCF5; 
+	color:#740D60; 
 }
 
 :-ms-input-placeholder {
-	color:#A9BCF5; 
+	color:#740D60; 
 }
 
 input:focus{
 	border: solid 1px #707070;
-	box-shadow: 0 0 5px 1px #969696;
+	box-shadow: 0 0 5px 1px #F75D59;
+	-moz-box-shadow:  0 0 5px 1px #F75D59;
 }
 
 input[type=submit]:hover {
 	opacity: .75;
 	cursor: pointer;
+	box-shadow:none;
+	-moz-box-shadow: none;
 }
