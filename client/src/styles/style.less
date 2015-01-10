@@ -24,6 +24,8 @@
 @card-width-wide: 250px;
 @card-img-width: 100px;
 @card-img-height: 100px;
+@card-img-width-large: 200px;
+@card-img-height-large: 200px;
 @min-card-content-width: 250px;
 @min-card-content-height: 250px;
 @max-card-content-width: 530px;
@@ -328,7 +330,8 @@ a {
 					}
 					
 					#panel-1 {
-						width: 72%;						
+						width: 72%;
+					   	vertical-align: top;
 						border-right: 1px solid @border-colour;
 					}
 				
@@ -400,13 +403,21 @@ a {
 		
 		img {	
 			// Solution from: http://stackoverflow.com/a/19414020
-			position: absolute;			
+		    width: @card-img-width;
+		  	height: @card-img-height;
+			position: absolute;
 			top: -100%;
 			bottom: -100%;
 			left: -100%;
 			right: -100%;
 			margin: auto;
 		}
+	}
+
+  	.card-button-header {
+	  	margin-bottom: 6px;
+	  	font-size: 22px;
+		font-family: @font-standard;
 	}
 	
 	.card-title {
@@ -467,7 +478,12 @@ a {
 	.img-frame {
 		width: @card-img-width * 2;
 		height: @card-img-height * 2;
-		line-height: (@card-img-height * 2) - 2
+		line-height: (@card-img-height * 2) - 2;
+
+	  	img {
+			width: @card-img-width * 2;
+	  		height: @card-img-height * 2;
+		}
 	}
 	
 	.img-frame-standard {

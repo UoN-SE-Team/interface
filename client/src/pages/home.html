@@ -1,59 +1,28 @@
 
-<div class="card-button-large">
-	<div class="card-content-item">
-		<div class="item-header">
-			<a class="item-title">Product Name Example</a>
-			<a class="item-extra">Product type</a>
-		</div>
-		<div class="item-body">
-			<div class="img-frame-standard">
-				<img src="pages/assets/example_icon.png"/>
-			</div>
-			product description
-		</div>
-		<div class="item-footer">
-			<a class="content-link">view</a>
-		</div>
-	</div>	
-</div>
-<div class="card-button-large">
-	<div class="card-content-item">
-		<div class="item-header">
-			<a class="item-title">Product Name</a>
-			<a class="item-extra">Product type</a>
-		</div>
-		<div class="item-body">
-			<div class="img-frame-standard">
-				<img src="pages/assets/example_icon.png"/>
-			</div>
-			product description
-		</div>
-		<div class="item-footer">
-			<a class="content-link">view</a>
-		</div>
-	</div>	
-</div>
-<div class="card-button-large">
-	<div class="card-content-item">
-		<div class="item-header">
-			<a class="item-title">Product Name</a>
-			<a class="item-extra">Product type</a>
-		</div>
-		<div class="item-body">
-			<div class="img-frame-standard">
-				<img src="pages/assets/example_icon.png"/>
-			</div>
-			product description
-		</div>
-		<div class="item-footer">
-			<a class="content-link">view</a>
-		</div>
-	</div>	
+<div class="card-button-large" onclick="showOverlay('Ye Olde Table',
+	                                                ['Add to wishlist', ''],
+	                                                ['pages/assets/items/tavern-table.png'],
+	                                                'Description',
+	                                                'Perfect for any local tavern',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Furniture<br/><br/>' +
+	                                                 'Auction date and period:<br/>Sat, 18/01/2015 Afternoon<br/><br/>' +
+	                                                  'Location:<br/>Northampton<br/><br/>' +
+	                                                   'Lot number:<br/>12345678<br/><br/>' +
+	                                                    'Estimated value: <br/>(£) 7500<br/><br/>'
+	                                               );">
+	<div class="card-button-header">Featured Item</div>
+	<div class="img-frame">
+		<img src="pages/assets/items/tavern-table.png"/>
+	</div>
+	<div class="card-title">
+		Ye Olde Table
+	</div>
 </div>
 
 <div class="card-content">
 	<div class="card-title">
-		Calender Dates
+		Upcoming Auctions
 	</div>
 	<div class="card-content-container">
 		<div class="card-content-wrapper">		
@@ -62,19 +31,15 @@
 				<table>
 					<tbody>
 						<tr>
-							<td class="item-img">
-								<!-- icon/image to show. Will be resized to 64 x 64 -->
-								<img src="pages/assets/example_icon_small.png"/>
-							</td>
 							<td class="item-content">
 								<div class="item-header">
 									<!-- This should link to the same destination as the content-link in item-footer  -->
-									<a class="item-title">Auction</a>
+									<a class="item-title">Furniture</a>
 									<!-- This should not link to anything -->
-									<a class="item-extra">date</a>
+									<a class="item-extra">18/01/2015</a>
 								</div>
 								<div class="item-body">
-									Description of auction/link to production within the auction 
+									Antique furniture auction in Northampton - Saturday 18/01/2015, Afternoon
 								</div>
 							</td>
 						</tr>
@@ -82,61 +47,7 @@
 				</table>
 				<div class="item-footer">
 					<!-- This should link to the same destination as the item-title  -->
-					<a class="content-link">view</a>
-				</div>
-			</div>
-			<div class="card-content-item">
-				<table>
-					<tbody>
-						<tr>
-							<td class="item-img">
-								<!-- icon/image to show. Will be resized to 64 x 64 -->
-								<img src="pages/assets/example_icon_small.png"/>
-							</td>
-							<td class="item-content">
-								<div class="item-header">
-									<!-- This should link to the same destination as the content-link in item-footer  -->
-									<a class="item-title">Auction</a>
-									<!-- This should not link to anything -->
-									<a class="item-extra">date</a>
-								</div>
-								<div class="item-body">
-									Description of auction
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="item-footer">
-					<!-- This should link to the same destination as the item-title  -->
-					<a class="content-link">view</a>
-				</div>
-			</div>
-			<div class="card-content-item">
-				<table>
-					<tbody>
-						<tr>
-							<td class="item-img">
-								<!-- icon/image to show. Will be resized to 64 x 64 -->
-								<img src="pages/assets/example_icon_small.png"/>
-							</td>
-							<td class="item-content">
-								<div class="item-header">
-									<!-- This should link to the same destination as the content-link in item-footer  -->
-									<a class="item-title">Local fate</a>
-									<!-- This should not link to anything -->
-									<a class="item-extra">date</a>
-								</div>
-								<div class="item-body">
-									Description of fate
-								</div>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="item-footer">
-					<!-- This should link to the same destination as the item-title  -->
-					<a class="content-link">view</a>
+					<a class="content-link" href="javascript:void(0);" onclick="loadPage('#content', 'Catalogue', 'pages/catalogue.html');return false">view</a>
 				</div>
 			</div>
 			<!-- end item -->			
@@ -155,45 +66,153 @@
 					<tbody>
 						<tr>
 							<td class="item-img">
-								<img src="pages/assets/example_icon_small.png"/>
+								<img src="pages/assets/items/tavern-table.png"/>
 							</td>
 							<td class="item-content">
 								<div class="item-header">
-									<a class="item-title">Product Title</a>
-									<a class="item-extra">End Date/Auction Date</a>
+									<a class="item-title" href="javascript:void(0);" onclick="showOverlay('Ye Olde Table',
+	                                                ['Add to wishlist', ''],
+	                                                ['pages/assets/items/tavern-table.png'],
+	                                                'Description',
+	                                                'Perfect for any local tavern',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Furniture<br/><br/>' +
+	                                                 'Auction date and period:<br/>Sat, 18/01/2015 Afternoon<br/><br/>' +
+	                                                  'Location:<br/>Northampton<br/><br/>' +
+	                                                   'Lot number:<br/>12345678<br/><br/>' +
+	                                                    'Estimated value: <br/>(£) 7500<br/><br/>'
+	                                               );">Ye Olde Table</a>
+									<a class="item-extra">Auction on 18/01/2015</a>
 								</div>
 								<div class="item-body">
-									Product Description
+									Perfect for any local tavern
 								</div>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				<div class="item-footer">
-					<a class="content-link">view</a>
+					<a class="content-link" href="javascript:void(0);" onclick="showOverlay('Ye Olde Table',
+	                                                ['Add to wishlist', ''],
+	                                                ['pages/assets/items/tavern-table.png'],
+	                                                'Description',
+	                                                'Perfect for any local tavern',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Furniture<br/><br/>' +
+	                                                 'Auction date and period:<br/>Sat, 18/01/2015 Afternoon<br/><br/>' +
+	                                                  'Location:<br/>Northampton<br/><br/>' +
+	                                                   'Lot number:<br/>12345678<br/><br/>' +
+	                                                    'Estimated value: <br/>(£) 7500<br/><br/>'
+	                                               );">view</a>
 				</div>
 			</div>
 			<div class="card-content-item">
 				<table>
 					<tbody>
-						<tr>
-							<td class="item-img">
-								<img src="pages/assets/example_icon_small.png"/>
-							</td>
-							<td class="item-content">
-								<div class="item-header">
-									<a class="item-title">Product Title</a>
-									<a class="item-extra">End Date/Auction Date</a>
-								</div>
-								<div class="item-body">
-									Product Description
-								</div>
-							</td>
-						</tr>
+					<tr>
+						<td class="item-img">
+							<img src="pages/assets/items/monalisa.jpg"/>
+						</td>
+						<td class="item-content">
+							<div class="item-header">
+								<a class="item-title" href="javascript:void(0);" onclick="showOverlay('La Gioconda by Leonardo da Vinci',
+	                                                ['Add to my watchlist', '', 'Place comission bid', ''],
+	                                                ['pages/assets/items/monalisa.jpg'],
+	                                                'Description',
+	                                                'The Mona Lisa or La Gioconda in Italian is a half-length portrait of a woman by the Italian artist Leonardo da Vinci, which has been acclaimed as the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.<br/>The painting, thought to be a portrait of Lisa Gherardini, the wife of Francesco del Giocondo, is in oil on a white Lombardy poplar panel, and is believed to have been painted between 1503 and 1506, although Leonardo may have continued working on it as late as 1517.<br/><br/>Artist:<br/>Leonardo da Vinci<br/><br/>Period/Date of production:<br/>16<sup>th</sup> century<br/><br/>Framed:<br/>Original wooden carved frame<br/><br/>Subject:<br/>portrait<br/><br/>Painting medium used:<br/>oil<br/><br/>Dimensions:<br/>Height: 77cm; Width: 53cm',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Famous Paintings<br/><br/>Auction date and period:<br/>Sat, 21,11,2015 Afternoon<br/><br/>Location:<br/>London<br/><br/>Lot number:<br/>12345678<br/><br/>Estimated value: <br/>(£) 511,000,000<br/><br/>Highest Bid:<br/>(£) 650,000,000.<br/><br/>Auction ending at:<br/>12 Jul 2015'
+	                                               );">La Gioconda</a>
+								<a class="item-extra">Auction on 21,11,2015</a>
+							</div>
+							<div class="item-body">
+								The Mona Lisa or La Gioconda in Italian is a half-length portrait of a woman by the Italian artist Leonardo da Vinci, which has been acclaimed as the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world...
+							</div>
+						</td>
+					</tr>
 					</tbody>
 				</table>
 				<div class="item-footer">
-					<a class="content-link">view</a>
+					<a class="content-link" href="javascript:void(0);" onclick="showOverlay('La Gioconda by Leonardo da Vinci',
+	                                                ['Add to my watchlist', 'http://google.com', 'Place comission bid', 'http://google.com'],
+	                                                ['pages/assets/items/monalisa.jpg'],
+	                                                'Description',
+	                                                'The Mona Lisa or La Gioconda in Italian is a half-length portrait of a woman by the Italian artist Leonardo da Vinci, which has been acclaimed as the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.<br/>The painting, thought to be a portrait of Lisa Gherardini, the wife of Francesco del Giocondo, is in oil on a white Lombardy poplar panel, and is believed to have been painted between 1503 and 1506, although Leonardo may have continued working on it as late as 1517.<br/><br/>Artist:<br/>Leonardo da Vinci<br/><br/>Period/Date of production:<br/>16<sup>th</sup> century<br/><br/>Framed:<br/>Original wooden carved frame<br/><br/>Subject:<br/>portrait<br/><br/>Painting medium used:<br/>oil<br/><br/>Dimensions:<br/>Height: 77cm; Width: 53cm',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Famous Paintings<br/><br/>Auction date and period:<br/>Sat, 21,11,2015 Afternoon<br/><br/>Location:<br/>London<br/><br/>Lot number:<br/>12345678<br/><br/>Estimated value: <br/>(£) 511,000,000<br/><br/>Highest Bid:<br/>(£) 650,000,000.<br/><br/>Auction ending at:<br/>12 Jul 2015'
+	                                               );">view</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="card-content">
+	<div class="card-title">
+		News
+	</div>
+	<div class="card-content-container">
+		<div class="card-content-wrapper">
+			<div class="card-content-item">
+				<table>
+					<tbody>
+					<tr>
+						<td class="item-img">
+							<img src="pages/assets/comment.png"/>
+						</td>
+						<td class="item-content">
+							<div class="item-header">
+								<a class="item-title" href="javascript:void(0);" onclick="showOverlay('La Gioconda by Leonardo da Vinci',
+	                                                ['Add to my watchlist', 'http://google.com', 'Place comission bid', 'http://google.com'],
+	                                                ['pages/assets/items/monalisa.jpg'],
+	                                                'Description',
+	                                                'The Mona Lisa or La Gioconda in Italian is a half-length portrait of a woman by the Italian artist Leonardo da Vinci, which has been acclaimed as the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.<br/>The painting, thought to be a portrait of Lisa Gherardini, the wife of Francesco del Giocondo, is in oil on a white Lombardy poplar panel, and is believed to have been painted between 1503 and 1506, although Leonardo may have continued working on it as late as 1517.<br/><br/>Artist:<br/>Leonardo da Vinci<br/><br/>Period/Date of production:<br/>16<sup>th</sup> century<br/><br/>Framed:<br/>Original wooden carved frame<br/><br/>Subject:<br/>portrait<br/><br/>Painting medium used:<br/>oil<br/><br/>Dimensions:<br/>Height: 77cm; Width: 53cm',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Famous Paintings<br/><br/>Auction date and period:<br/>Sat, 21,11,2015 Afternoon<br/><br/>Location:<br/>London<br/><br/>Lot number:<br/>12345678<br/><br/>Estimated value: <br/>(£) 511,000,000<br/><br/>Highest Bid:<br/>(£) 650,000,000.<br/><br/>Auction ending at:<br/>12 Jul 2015'
+	                                               );">A Rare Item</a>
+								<a class="item-extra">11/01/2015</a>
+							</div>
+							<div class="item-body">
+								La Gioconda is going up for auction!
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<a class="content-link" href="javascript:void(0);" onclick="showOverlay('La Gioconda by Leonardo da Vinci',
+	                                                ['Add to my watchlist', 'http://google.com', 'Place comission bid', 'http://google.com'],
+	                                                ['pages/assets/items/monalisa.jpg'],
+	                                                'Description',
+	                                                'The Mona Lisa or La Gioconda in Italian is a half-length portrait of a woman by the Italian artist Leonardo da Vinci, which has been acclaimed as the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world.<br/>The painting, thought to be a portrait of Lisa Gherardini, the wife of Francesco del Giocondo, is in oil on a white Lombardy poplar panel, and is believed to have been painted between 1503 and 1506, although Leonardo may have continued working on it as late as 1517.<br/><br/>Artist:<br/>Leonardo da Vinci<br/><br/>Period/Date of production:<br/>16<sup>th</sup> century<br/><br/>Framed:<br/>Original wooden carved frame<br/><br/>Subject:<br/>portrait<br/><br/>Painting medium used:<br/>oil<br/><br/>Dimensions:<br/>Height: 77cm; Width: 53cm',
+	                                                'Auction Information',
+	                                                'Auction title:<br/>Famous Paintings<br/><br/>Auction date and period:<br/>Sat, 21,11,2015 Afternoon<br/><br/>Location:<br/>London<br/><br/>Lot number:<br/>12345678<br/><br/>Estimated value: <br/>(£) 511,000,000<br/><br/>Highest Bid:<br/>(£) 650,000,000.<br/><br/>Auction ending at:<br/>12 Jul 2015'
+	                                               );">view</a>
+				</div>
+			</div>
+			<div class="card-content-item">
+				<table>
+					<tbody>
+					<tr>
+						<td class="item-img">
+							<img src="pages/assets/comment.png"/>
+						</td>
+						<td class="item-content">
+							<div class="item-header">
+								<!-- This should link to the same destination as the content-link in item-footer  -->
+								<a class="item-title">A New Year, New Auctions</a>
+								<!-- This should not link to anything -->
+								<a class="item-extra">10/01/2015</a>
+							</div>
+							<div class="item-body">
+								Antique furniture auction in Northampton - Saturday 18/01/2015, Afternoon
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<div class="item-footer">
+					<a class="content-link" href="javascript:void(0);" onclick="loadPage('#content', 'Catalogue', 'pages/catalogue.html');return false">view</a>
 				</div>
 			</div>
 		</div>
