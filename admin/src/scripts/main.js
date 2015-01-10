@@ -33,6 +33,10 @@ function loadPage(id, title, file, callback) {
 			$(".copyright").css("display", "none");
 			$("#arrow-container").css("display", "block");
 		}
+		else if (title == "Reports") {
+			$("#report-container").css("display", "block");
+			$("#copyright").css("display", "none");
+		}
 		else {
 			$(".copyright").css("display", "block");
 			$("#arrow-container").css("display", "none");

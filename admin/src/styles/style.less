@@ -69,6 +69,20 @@ body {
 	margin: 0;
 }
 
+button {
+	width: 125px;
+	padding: 2px 0 2px 0;
+	text-align: center;
+	background-color: @fotheby-purple;
+	border-radius: 2px;
+  	border: none;
+  	color: @text-light;
+}
+button:hover {
+  font-weight: bold;
+}
+
+
 .center() {
 	margin: 0 auto;
 	text-align: center;
@@ -386,6 +400,22 @@ a {
 	border-radius: 4px;
 	background-color: @card-colour;
 	box-shadow: 0 0px 6px @shadow-colour;
+}
+
+.card-graph {
+  	.card;
+  	width: 500px;
+  	height: 350px;
+
+  	.title {
+	  	font-size: 1.5em;
+	  	font-family: @font-standard;
+	  	color: @text-dark;
+	}
+
+  	canvas {
+
+	}
 }
 
 .card-button {

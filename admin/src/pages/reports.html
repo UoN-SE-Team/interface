@@ -1,0 +1,43 @@
+<div class="card-graph">
+    <div class="title">New Users - Example</div>
+    <canvas id="chart1" width="500" height="300"></canvas>
+</div>
+
+<div class="card-graph">
+    <div class="title">Total Profit (£) - Example</div>
+    <canvas id="chart2" width="500" height="300"></canvas>
+</div>
+
+<script>
+    var data1 = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [
+            {
+                label: "New Users",
+                fillColor: "rgb(116,13,96)",
+                data: [50, 30, 45, 32, 16, 10, 20, 32, 18, 62, 80, 70]
+            }
+        ]
+    };
+    var ctx = document.getElementById("chart1").getContext("2d");
+    var chart1 = new Chart(ctx).Bar(data1);
+
+    var data2 = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [
+            {
+                label: "Total Profit (£)",
+                strokeColor: "rgb(116,13,96)",
+                pointColor: "rgb(116,13,96)",
+                data: [120000, 100000, 115000, 110000, 80000, 76000, 80000, 90000, 85000, 130000, 150000, 145000]
+            }
+        ]
+    };
+    var options2 = {
+        bezierCurve: false,
+        datasetFill: false,
+        scaleBeginAtZero: true
+    };
+    ctx = document.getElementById("chart2").getContext("2d");
+    var chart2 = new Chart(ctx).Line(data2, options2);
+</script>

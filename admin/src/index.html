@@ -7,7 +7,8 @@
 		<meta charset="utf-8" />
 		<script src="scripts/prefixfree.min.js"></script>		
 		<script src="scripts/jquery-2.1.1.min.js"></script>	
-		<script src="scripts/masonry.pkgd.min.js"></script>	
+		<script src="scripts/masonry.pkgd.min.js"></script>
+		<script src="scripts/Chart.min.js"></script>
 		<script src="scripts/main.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css' />
@@ -26,12 +27,24 @@
 				</div>
 			</div>
 			<footer>
-				<div class="copyright">Copyright &#169; Fotheby's</div>
-				<div id="arrow-container">
-					<div id="arrow-content">
-						<img id="cat-left" class="arrow" src="pages/assets/arrow-left.png"/>
-						<span id="page-numbers"></span>
-						<img id="cat-right" class="arrow" src="pages/assets/arrow-right.png"/>
+				<div id="copyright" class="copyright">Copyright &#169; Fotheby's</div>
+				<div id="report-container">
+					<div id="report-content">
+						<button class="nav-button" onclick="showOverlay('Generate Report',
+	                                                null,
+	                                                null,
+	                                                'Include',
+	                                                 '<input type=\'checkbox\' name=\'content\' value=\'newUsers\'>New Users</input><br/>' +
+													 '<input type=\'checkbox\' name=\'content\' value=\'totalProfit\'>Total Profit</input><br/>' +
+												     '<input type=\'checkbox\' name=\'content\' value=\'itemSold\'>Items Sold</input><br/>' +
+												     '<input type=\'checkbox\' name=\'content\' value=\'totalAuctions\'>Total Auctions</input><br/><br/>',
+	                                                 'Timeframe',
+													 'Start Date <br/>'+
+													 '<input type=\'date\' name=\'startDate\'><br/>'+
+													 'End Date <br/>'+
+													 '<input type=\'date\' name=\'endDate\'><br/><br/>'+
+													 '<button>Generate</button>'
+	                                               );">Generate Report</button>
 					</div>
 				</div>
 			</footer>
