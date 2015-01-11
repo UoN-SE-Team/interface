@@ -40,18 +40,15 @@
 }
 
 a.about-nav{
-	display:table-cell;
+	display:inline-block;
 	vertical-align:middle;
 }
 
 #history{
-	float:right;
 	width:450px;
-	display:table-cell;
+	display:inline-block;
 	position:relative;
-	padding-bottom:10%;
-	padding-left:10%;
-	margin-left:40px;
+	padding-left:20px;
 	vertical-align:middle;
 }
 
