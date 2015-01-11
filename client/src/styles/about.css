@@ -1,15 +1,14 @@
-#container{
+#about-container{
 	background-color:white;
-	width:100%;
-	height:100%;
+	margin: 0 auto;
+	width: 400px;
+	height: 550px;
+	/*height: 100%;*/
 }
-#contact-info{
+#about-contact-info{
 	display:block;
-	float:right;
-	height:95%;
+	/*float:right;*/
 	color: #204a65;
-	padding:25px 30px;
-	height: 100%; 
 	border: 10px solid white; 
 	-webkit-box-sizing: border-box; 
 	-moz-box-sizing: border-box; 
@@ -19,16 +18,16 @@
 	background: white;
 	text-align:left;
 }
-#contact-info dt { 
+#about-contact-info dt {
 	text-transform: uppercase; 
 	font-family: "brandon-grotesque", Helvetica, Arial, sans-serif; 
 	font-weight: 700; 
 	letter-spacing: 1px;
 	font-size: 12px;
-	color: #e8554e;
+	color: #F10400;
 	text-align: left;
 }
-#contact-info dd {
+#about-contact-info dd {
 	text-align:left;
 	margin-bottom: 25px;
 }

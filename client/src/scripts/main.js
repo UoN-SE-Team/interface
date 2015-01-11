@@ -17,13 +17,9 @@ function loadPage(id, title, file, callback) {
 			loadCatPage(1, true);
 		} else {
 			$(id).load(file, function() {
-				if (callback != undefined) {
-					callback();
-				}
-				reloadMasonry();
-				if (title == "Search") {
-					formatCurrencyInput();
-				}
+				if (callback != undefined) callback();
+				if (title != "Login" && title != "About" && title != "Search") reloadMasonry();
+				if (title == "Search") formatCurrencyInput();
 			});
 		}
 		document.title = title + " - " + document.title.split(" - ")[1];

@@ -1,0 +1,66 @@
+<div id="login-card" class="card-content">
+    <div class="card-title">
+        Login to Fotheby's
+    </div>
+    <div class="card-content-container">
+        <div class="card-content-wrapper">
+            <form>
+                <label>
+                    Username<br/>
+                    <input type="text" name="username">
+                </label>
+                <br/><br/>
+                <label>
+                    Password<br/>
+                    <input type="password" name="password">
+                </label><br/>
+                <a>Forgot password</a>
+                <br/><br/>
+                <button type="submit" value="submit">Login</button><br/><br/><br/>
+            </form>
+            Don't have an account?<br/>
+            <button style="margin-top: 6px;" onclick="showOverlay('Register with Fotheby\'s Auction House',
+	                                                null,
+	                                                null,
+	                                                'Details',
+	                                                '<form>' +
+	                                                    '<label id=\'reg-label\'>* Title:</label><select>' +
+	                                                        '<option>Mr</option>' +
+	                                                        '<option>Ms</option>' +
+	                                                        '<option>Mrs</option>' +
+	                                                        '<option>Miss</option>' +
+                                                        '</select><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* First Name:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Last Name:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Gender:</label><input type=\'radio\'>Male<input type=\'radio\'>Female<br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Telephone:</label><input type=\'tel\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Email:</label><input type=\'email\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Address Line 1:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>Address Line 2:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Town:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Province:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Country:</label><select><option>United Kingdom</option><option>Example</option></select><br/><br/>' +
+                                                        '<br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Username</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Password</label><input type=\'password\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Repeat Password</label><input type=\'password\'><br/><br/>' +
+                                                    '</form>'+
+                                                    '<button id=\'reg-button\'>Register</button>' +
+                                                    '<span id=\'reg-info\'>* required field</span>',
+	                                                'Bank Details',
+	                                                '<form>' +
+	                                                    '<label id=\'reg-label\'>* Bank/Building Society:</label><select>' +
+	                                                        '<option>Natwest</option>' +
+	                                                        '<option>Nationwide</option>' +
+	                                                        '<option>Lloyds</option>' +
+	                                                        '<option>Barclays</option>' +
+	                                                        '<option>etc</option>' +
+                                                        '</select><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Branch:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Account Number:</label><input type=\'text\'><br/><br/>' +
+                                                        '<label id=\'reg-label\'>* Sort Code:</label><input type=\'text\'><br/><br/>' +
+                                                    '</form>'
+	                                               );">Register</button>
+        </div>
+    </div>
+</div>

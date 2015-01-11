@@ -69,6 +69,31 @@ body {
 	margin: 0;
 }
 
+button {
+  width: 125px;
+  padding: 2px 0 2px 0;
+  text-align: center;
+  background-color: @fotheby-purple;
+  border-radius: 2px;
+  border: none;
+  color: @text-light;
+}
+button:hover {
+  font-weight: bold;
+}
+
+#reg-button, #reg-info{
+  float: right;
+  margin-top: 32px;
+  margin-right: 12px;
+  vertical-align: bottom;
+}
+
+#reg-label {
+	width: 140px;
+    display: inline-block;
+}
+
 .center() {
 	margin: 0 auto;
 	text-align: center;
@@ -331,11 +356,11 @@ a {
 					
 					#panel-1 {
 						width: 72%;
-					   	vertical-align: top;
 						border-right: 1px solid @border-colour;
 					}
 				
 					#panel-1, #panel-2 {
+					  	vertical-align: top;
 						padding-left: 15px;
 					}
 				
@@ -589,6 +614,16 @@ a {
 			}
 		}
 	}
+}
+
+#login-card {
+  	margin: 0 auto;
+
+  	.card-content-wrapper {
+		padding: 12px 0 24px 0;
+		text-align: center;
+  	}
+
 }
 
 #arrow-container {
