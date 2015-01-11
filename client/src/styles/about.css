@@ -1,13 +1,12 @@
 #about-container{
 	background-color:white;
-	margin: 0 auto;
 	width: 400px;
 	height: 550px;
-	/*height: 100%;*/
+	float:right;
 }
+
 #about-contact-info{
 	display:block;
-	/*float:right;*/
 	color: #204a65;
 	border: 10px solid white; 
 	-webkit-box-sizing: border-box; 
@@ -18,6 +17,7 @@
 	background: white;
 	text-align:left;
 }
+
 #about-contact-info dt {
 	text-transform: uppercase; 
 	font-family: "brandon-grotesque", Helvetica, Arial, sans-serif; 
@@ -27,7 +27,33 @@
 	color: #F10400;
 	text-align: left;
 }
+
 #about-contact-info dd {
 	text-align:left;
 	margin-bottom: 25px;
+}
+
+#about-container2{
+	float:left;
+	height:550px;
+	width:1200px;
+}
+
+a.about-nav{
+	display:table-cell;
+	vertical-align:middle;
+}
+
+#history{
+	float:right;
+	width:450px;
+	display:block;
+	position:absolute;
+	padding-bottom:10%;
+	padding-left:10%;
+}
+
+
+#history-title{
+	
 }
