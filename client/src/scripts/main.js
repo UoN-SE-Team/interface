@@ -132,7 +132,7 @@ function arrangeCatalogue() {
 	content.masonry("off", "layoutComplete", arrangeCatalogue);
 	content.masonry({ transitionDuration: 0 });
 	container.css("overflow", "auto");
-	if (document.title.contains("Catalogue")) {
+	if ($(document).find("title").text().indexOf("Catalogue") != -1) {
 		var page = 2;
 		var pageNumbers = $("#arrow-content").find("#page-numbers");
 		container.css("overflow", "hidden");
