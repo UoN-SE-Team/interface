@@ -47,13 +47,11 @@ a.about-nav{
 #history{
 	float:right;
 	width:450px;
-	display:block;
-	position:absolute;
+	display:table-cell;
+	position:relative;
 	padding-bottom:10%;
 	padding-left:10%;
+	margin-left:40px;
+	vertical-align:middle;
 }
 
-
-#history-title{
-	
-}
